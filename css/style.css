@@ -320,9 +320,30 @@ img {
 
 .package-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider min-width */
   gap: 2rem;
-  margin-top: 3rem;
+  padding: 2rem;
+}
+
+/* For wider screens (4 columns) */
+@media (min-width: 1200px) {
+  .package-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet view (2 columns) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .package-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile view (1 column) */
+@media (max-width: 767px) {
+  .package-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .package-card {
