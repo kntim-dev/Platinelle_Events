@@ -1,31 +1,41 @@
-// Mobile Menu Toggle
 document.addEventListener('DOMContentLoaded', function() {
+  // Mobile Menu Toggle
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const nav = document.querySelector('.nav');
   
-  mobileMenuBtn.addEventListener('click', function() {
-    nav.classList.toggle('active');
-    this.querySelector('i').classList.toggle('fa-times');
-  });
-  
+  if (mobileMenuBtn && nav) {
+    mobileMenuBtn.addEventListener('click', function() {
+      nav.classList.toggle('active');
+      const icon = this.querySelector('i');
+      if (icon) {
+        icon.classList.toggle('fa-times');
+      }
+    });
+  }
+
   // Close mobile menu when clicking on a link
   document.querySelectorAll('.nav a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('active');
-      mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (icon) {
+        icon.classList.remove('fa-times');
+      }
     });
   });
-  
+
   // Header scroll effect
   const header = document.querySelector('.header');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 100) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-  
+  if (header) {
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  }
+
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -43,10 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  
+
   // Current year in footer
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
-  
+  const currentYearElement = document.getElementById('currentYear');
+  if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+  }
+
   // Animate stats counting
   const statNumbers = document.querySelectorAll('.stat-number');
   if (statNumbers.length > 0) {
@@ -66,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 10);
     });
   }
-  
+
   // Testimonial slider
   const testimonialSlider = document.querySelector('.testimonial-slider');
   const testimonialSlides = document.querySelectorAll('.testimonial-slide');
@@ -76,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (testimonialSlider && testimonialSlides.length > 0) {
     let currentSlide = 0;
     const slideCount = testimonialSlides.length;
+    let slideInterval;
     
     function showSlide(index) {
       testimonialSlides.forEach((slide, i) => {
@@ -97,23 +111,24 @@ document.addEventListener('DOMContentLoaded', function() {
     showSlide(currentSlide);
     
     // Auto-advance every 5 seconds
-    const slideInterval = setInterval(nextSlide, 5000);
+    function startSlider() {
+      slideInterval = setInterval(nextSlide, 5000);
+    }
+    startSlider();
     
     // Pause on hover
     testimonialSlider.addEventListener('mouseenter', () => {
       clearInterval(slideInterval);
     });
     
-    testimonialSlider.addEventListener('mouseleave', () => {
-      slideInterval = setInterval(nextSlide, 5000);
-    });
+    testimonialSlider.addEventListener('mouseleave', startSlider);
     
     // Navigation buttons
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
   }
-  
-  // Form submission
+
+  // Booking Form submission
   const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
@@ -132,18 +147,27 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
-
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-  // Only prevent default if you're handling submission manually
-  if (!this.action.includes('formsubmit.co')) {
-    e.preventDefault();
+      alert('Thank you! We will contact you shortly.');
+      this.reset();
+    });
   }
-  alert('Thank you! We will contact you shortly.');
-  if (this.action.includes('formsubmit.co')) return; // Let FormSubmit handle submission
-  this.reset();
-});
-      
-  
+
+  // Contact Form Submission (FormSubmit.co)
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      // Only show alert if not using FormSubmit
+      if (!this.action.includes('formsubmit.co')) {
+        e.preventDefault();
+        alert('Thank you! We will contact you shortly.');
+        this.reset();
+      } else {
+        // For FormSubmit, show alert but let it submit
+        alert('Thank you! We will contact you shortly.');
+      }
+    });
+  }
+
   // Intersection Observer for animations
   const animateElements = document.querySelectorAll('.animate__animated');
   
