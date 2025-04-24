@@ -566,12 +566,20 @@ img {
   background: var(--white-color);
 }
 
+/* Center the form */
 .contact .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
+
+.contact-form {
+  width: 100%;
+  max-width: 900px; 
+  margin: 0 auto;
+}
+
+
 
 .contact-content h2 {
   font-size: 2.5rem;
