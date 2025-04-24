@@ -131,12 +131,12 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Please fill in all required fields');
         return;
       }
+  document.querySelector('.contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Thank you! We will contact you shortly.');
+  this.reset(); // Clears the form
+});
       
-      // Here you would typically send the form data to a server
-      // For demo purposes, we'll just show a success message
-      alert('Thank you for your enquiry! We will contact you shortly.');
-      this.reset();
-    });
   }
   
   // Intersection Observer for animations
