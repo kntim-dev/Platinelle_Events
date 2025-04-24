@@ -320,9 +320,11 @@ img {
 
 .package-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Wider min-width */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Wider min-width */
   gap: 2rem;
-  padding: 2rem;
+  max-width: 1600px; /* Wider container */
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 /* For wider screens (4 columns) */
