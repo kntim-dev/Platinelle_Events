@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just_K Events - Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Just_K Events Logo" width="120">
+      </a>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#packages">Packages</a></li>
+          <li><a href="index.html#testimonials">Testimonials</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Gallery Hero -->
+  <section class="gallery-hero">
+    <div class="container">
+      <h1 class="animate__animated animate__fadeInDown">Our Event Gallery</h1>
+      <p class="animate__animated animate__fadeInUp animate__delay-1s">Memorae Sacrum</p>
+    </div>
+  </section>
+
+  <!-- Gallery Filters -->
+  <section class="gallery-filters">
+    <div class="container">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Events</button>
+        <button class="filter-btn" data-filter="wedding">Weddings</button>
+        <button class="filter-btn" data-filter="corporate">Corporate</button>
+        <button class="filter-btn" data-filter="birthday">Birthdays</button>
+        <button class="filter-btn" data-filter="other">Other</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="gallery-grid">
+    <div class="container">
+      <div class="grid">
+        <!-- Wedding Images -->
+        <div class="gallery-item wedding animate__animated animate__fadeIn">
+          <img src="images/gallery/wedding1.jpg" alt="Wedding Event">
+          <div class="gallery-overlay">
+            <h3>Sarah & Michael's Wedding</h3>
+            <p>Grand Ballroom Celebration</p>
+            <a href="images/gallery/wedding1.jpg" class="gallery-expand" data-lightbox="wedding">
+              <i class="fas fa-expand"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="gallery-item wedding animate__animated animate__fadeIn">
+          <img src="images/gallery/wedding2.jpg" alt="Wedding Event">
+          <div class="gallery-overlay">
+            <h3>Outdoor Garden Wedding</h3>
+            <p>Romantic Sunset Ceremony</p>
+            <a href="images/gallery/wedding2.jpg" class="gallery-expand" data-lightbox="wedding">
+              <i class="fas fa-expand"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Corporate Images -->
+        <div class="gallery-item corporate animate__animated animate__fadeIn">
+          <img src="images/gallery/corporate1.jpg" alt="Corporate Event">
+          <div class="gallery-overlay">
+            <h3>Annual Awards Gala</h3>
+            <p>Black Tie Affair</p>
+            <a href="images/gallery/corporate1.jpg" class="gallery-expand" data-lightbox="corporate">
+              <i class="fas fa-expand"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="gallery-item corporate animate__animated animate__fadeIn">
+          <img src="images/gallery/corporate2.jpg" alt="Corporate Event">
+          <div class="gallery-overlay">
+            <h3>Product Launch</h3>
+            <p>Tech Company Reveal</p>
+            <a href="images/gallery/corporate2.jpg" class="gallery-expand" data-lightbox="corporate">
+              <i class="fas fa-expand"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Birthday Images -->
+        <div class="gallery-item birthday animate__animated animate__fadeIn">
+          <img src="images/gallery/birthday1.jpg" alt="Birthday Event">
+          <div class="gallery-overlay">
+            <h3>Sweet 16 Celebration</h3>
+            <p>Pink & Gold Theme</p>
+            <a href="images/gallery/birthday1.jpg" class="gallery-expand" data-lightbox="birthday">
+              <i class="fas fa-expand"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="gallery-item birthday animate__animated animate__fadeIn">
+          <img src="images/gallery/birthday2.jpg" alt="Birthday Event">
+          <div class="gallery-overlay">
+            <h3>50th Birthday Party</h3>
+            <p>Elegant Dinner Party</p>
+            <a href="images/gallery/birthday2.jpg" class="gallery-expand" data-lightbox="birthday">
+              <i class="fas fa-expand"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Other Events -->
+        <div class="gallery-item other animate__animated animate__fadeIn">
+          <img src="images/gallery/other1.jpg" alt="Charity Event">
+          <div class="gallery-overlay">
+            <h3>Charity Fundraiser</h3>
+            <p>Gala Dinner & Auction</p>
+            <a href="images/gallery/other1.jpg" class="gallery-expand" data-lightbox="other">
+              <i class="fas fa-expand"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="gallery-item other animate__animated animate__fadeIn">
+          <img src="images/gallery/other2.jpg" alt="Graduation Party">
+          <div class="gallery-overlay">
+            <h3>Graduation Party</h3>
+            <p>Class of 2023 Celebration</p>
+            <a href="images/gallery/other2.jpg" class="gallery-expand" data-lightbox="other">
+              <i class="fas fa-expand"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- More images would continue here -->
+        <div class="gallery-item wedding animate__animated animate__fadeIn">
+          <img src="images/gallery/wedding3.jpg" alt="Wedding Event">
+          <div class="gallery-overlay">
+            <h3>Beachfront Wedding</h3>
+            <p>Tropical Paradise Theme</p>
+            <a href="images/gallery/wedding3.jpg" class="gallery-expand" data-lightbox="wedding">
+              <i class="fas fa-expand"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="gallery-item corporate animate__animated animate__fadeIn">
+          <img src="images/gallery/corporate3.jpg" alt="Corporate Event">
+          <div class="gallery-overlay">
+            <h3>Company Anniversary</h3>
+            <p>10 Years Celebration</p>
+            <a href="images/gallery/corporate3.jpg" class="gallery-expand" data-lightbox="corporate">
+              <i class="fas fa-expand"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <span class="close-lightbox">&times;</span>
+    <div class="lightbox-content">
+      <img id="lightboxImage" src="" alt="">
+      <div class="lightbox-caption">
+        <h3 id="lightboxTitle"></h3>
+        <p id="lightboxDesc"></p>
+      </div>
+    </div>
+    <a class="lightbox-prev">&#10094;</a>
+    <a class="lightbox-next">&#10095;</a>
+  </div>
+
+  <!-- Call to Action -->
+  <section class="gallery-cta">
+    <div class="container">
+      <h2>Ready to Create Your Perfect Event?</h2>
+      <a href="index.html#contact" class="btn btn-primary">Contact Us Today</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="images/logo-white.png" alt="Just_K Events Logo" width="120">
+          <p class="motto">Memorae Sacrum</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#packages">Packages</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-phone"></i> +233 574 206 627</p>
+          <p><i class="fas fa-envelope"></i> info@justkevents.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Accra, Ghana</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Just_K Events. All Rights Reserved.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
