@@ -276,6 +276,7 @@
     <div class="container">
       <div class="contact-content">
         <h2>Ready to Plan Your Event?</h2>
+         <p>Fill out the form below and we'll get back to you within 24 hours to discuss your vision.</p>
 
     <form 
       class="contact-form" 
@@ -298,12 +299,25 @@
         <input type="tel" name="phone" placeholder="Phone Number">
       </div>
       <div class="form-group">
+        <select id="eventType" required>
+            <option value="">Select Event Type</option>
+            <option value="wedding">Wedding</option>
+            <option value="corporate">Corporate</option>
+            <option value="birthday">Birthday</option>
+            <option value="other">Other</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <input type="date" id="eventDate" required>
+      </div>
+      <div class="form-group">
         <select name="package" required>
           <option value="" disabled selected>Select Package</option>
           <option value="bronze">Bronze</option>
           <option value="silver">Silver</option>
           <option value="gold">Gold</option>
           <option value="platinum">Platinum</option>
+          <option value="custom">Custom</option>
         </select>
       </div>
       <div class="form-group">
@@ -311,7 +325,7 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit Enquiry</button>
     </form>        
-        <p>Fill out the form below and we'll get back to you within 24 hours to discuss your vision.</p>
+       
         
         <div class="contact-info">
           <div class="contact-item">
@@ -334,45 +348,7 @@
           <a href="#"><i class="fab fa-twitter"></i></a>
           <a href="#"><i class="fab fa-whatsapp"></i></a>
         </div>
-      </div>
-      
-      <form class="contact-form" id="bookingForm">
-        <div class="form-group">
-          <input type="text" id="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" id="email" placeholder="Email Address" required>
-        </div>
-        <div class="form-group">
-          <input type="tel" id="phone" placeholder="Phone Number" required>
-        </div>
-        <div class="form-group">
-          <select id="eventType" required>
-            <option value="">Select Event Type</option>
-            <option value="wedding">Wedding</option>
-            <option value="corporate">Corporate</option>
-            <option value="birthday">Birthday</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <input type="date" id="eventDate" required>
-        </div>
-        <div class="form-group">
-          <select id="package" required>
-            <option value="">Select Package</option>
-            <option value="bronze">Bronze</option>
-            <option value="silver">Silver</option>
-            <option value="gold">Gold</option>
-            <option value="custom">Custom</option>
-          </select>
-        </div>
-        <div class="form-group full-width">
-          <textarea id="message" placeholder="Tell us about your event..." rows="4"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Enquiry</button>
-      </form>
-    </div>
+     
   </section>
 
   <!-- Footer -->
