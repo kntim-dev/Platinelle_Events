@@ -131,13 +131,18 @@ document.addEventListener('DOMContentLoaded', function() {
         alert('Please fill in all required fields');
         return;
       }
-  document.querySelector('.contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
+      
+
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+  // Only prevent default if you're handling submission manually
+  if (!this.action.includes('formsubmit.co')) {
+    e.preventDefault();
+  }
   alert('Thank you! We will contact you shortly.');
-  this.reset(); // Clears the form
+  if (this.action.includes('formsubmit.co')) return; // Let FormSubmit handle submission
+  this.reset();
 });
       
-  }
   
   // Intersection Observer for animations
   const animateElements = document.querySelectorAll('.animate__animated');
