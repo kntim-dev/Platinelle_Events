@@ -327,6 +327,33 @@ img {
   padding: 1rem;
 }
 
+/* Base Button Style */
+.share-btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin: 10px;
+  
+  /* Golden Color Scheme */
+  background: rgba(184, 134, 11, 0.2); /* Primary color with 20% opacity */
+  color: #b8860b; /* Solid gold for text */
+  border: 2px solid #b8860b; /* Gold border */
+}
+
+/* Hover & Active States */
+.share-btn:hover {
+  background: rgba(184, 134, 11, 0.3); /* Slightly more opaque on hover */
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.3);
+}
+
+.share-btn:active {
+  transform: translateY(1px);
+}
+
 /* For wider screens (4 columns) */
 @media (min-width: 1200px) {
   .package-grid {
