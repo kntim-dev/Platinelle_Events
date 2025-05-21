@@ -215,3 +215,38 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+
+const shareBtn = document.getElementById("shareBtn");
+
+async function sharePortfolio() {
+  const portfolioUrl = window.location.href;
+  const shareData = {
+    title: "My Portfolio",
+    text: "Check out my work!",
+    url: portfolioUrl,
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (err) {
+      console.log("Share canceled:", err);
+    }
+  } else {
+    try {
+      await navigator.clipboard.writeText(portfolioUrl);
+      // Visual feedback
+      shareBtn.textContent = "✓ Copied!";
+      shareBtn.style.background = "rgba(184, 134, 11, 0.4)"; // Highlight when copied
+      setTimeout(() => {
+        shareBtn.textContent = "Share My Portfolio";
+        shareBtn.style.background = "rgba(184, 134, 11, 0.2)";
+      }, 2000);
+    } catch (err) {
+      prompt("Copy this link:", portfolioUrl);
+    }
+  }
+}
+
+shareBtn.addEventListener("click", sharePortfolio);
