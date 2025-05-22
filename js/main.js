@@ -217,36 +217,38 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-const shareBtn = document.getElementById("shareBtn");
+const shareButton = document.getElementById('shareButton');
 
-async function sharePortfolio() {
-  const portfolioUrl = window.location.href;
-  const shareData = {
-    title: "My Portfolio",
-    text: "Check out my work!",
-    url: portfolioUrl,
-  };
+async function handleShare() {
+    const eventUrl = window.location.href;
+    const shareData = {
+        title: 'Awesome Event!',
+        text: 'Check out this exciting event!',
+        url: eventUrl,
+    };
 
-  if (navigator.share) {
     try {
-      await navigator.share(shareData);
+        if (navigator.share) {
+            await navigator.share(shareData);
+        } else {
+            await navigator.clipboard.writeText(eventUrl);
+            // Visual feedback
+            const originalText = shareButton.innerHTML;
+            shareButton.innerHTML = `
+                <svg class="share-icon" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                Shared! 🎉
+            `;
+            
+            setTimeout(() => {
+                shareButton.innerHTML = originalText;
+            }, 2000);
+        }
     } catch (err) {
-      console.log("Share canceled:", err);
+        console.log('Sharing failed:', err);
+        prompt('Copy this link to share:', eventUrl);
     }
-  } else {
-    try {
-      await navigator.clipboard.writeText(portfolioUrl);
-      // Visual feedback
-      shareBtn.textContent = "✓ Copied!";
-      shareBtn.style.background = "rgba(184, 134, 11, 0.4)"; // Highlight when copied
-      setTimeout(() => {
-        shareBtn.textContent = "Share My Portfolio";
-        shareBtn.style.background = "rgba(184, 134, 11, 0.2)";
-      }, 2000);
-    } catch (err) {
-      prompt("Copy this link:", portfolioUrl);
-    }
-  }
 }
 
-shareBtn.addEventListener("click", sharePortfolio);
+shareButton.addEventListener('click', handleShare);
