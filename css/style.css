@@ -343,7 +343,7 @@ img {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(154, 114, 9, 0.2);
-    margin:0 auto;
+    margin:30px auto;
     width:fit-content;
 }
 
