@@ -343,11 +343,13 @@ img {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(154, 114, 9, 0.2);
+    margin:0 auto;
+    width:fit-content;
 }
 
 .share-button:hover {
     background-color: #856007;
-    transform: translateY(-2px);
+    transform: translateY(-5px);
     box-shadow: 0 4px 12px rgba(154, 114, 9, 0.3);
 }
 
