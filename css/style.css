@@ -343,7 +343,10 @@ img {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(154, 114, 9, 0.2);
-    margin:30px auto;
+    margin-top: 90px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
     width:fit-content;
 }
 
